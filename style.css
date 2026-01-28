@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100;300;500&display=swap');
+
+* {
+    font-family: 'M PLUS 1 Code', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 350;
+}
+
+
+body {
+    height: 100vh;
+    background: url(./image/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+
+
+.container {
+    /* border: 1px solid black; */
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: scale(1);
+}
+
+
+h1 {
+    transform: translateY(80px);
+}
+
+#text {
+    font-size: 1.3rem;
+}
+
+
+.circle {
+    height: 100%;
+    width: 100%;
+    background-color: #010f1c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.outer-circle {
+    height: 320px;
+    width: 320px;
+    background: conic-gradient(#556cb7 0%,
+            #4c59a4 40%,
+            #fff 40%,
+            #fff 60%,
+            #2c237e 60%,
+            #372379 100%);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    border-radius: 50%;
+    z-index: -2;
+}
+
+.pointer-container {
+    width: 20px;
+    height: 190px;
+    /* background-color: brown; */
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    transform-origin: bottom center;
+    animation: rotate 7500ms linear forwards infinite;
+}
+
+.pointer {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+
+}
+
+.container.grow {
+    animation: grow 3s linear forwards;
+}
+
+.container.shrink {
+    animation: shrink 3s linear forwards;
+}
+
+
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+
+    }
+}
+
+
+@keyframes shrink {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+}
